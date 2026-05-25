@@ -1,3 +1,4 @@
+/* Using the Erbaum font! */
 @font-face {
   font-family: "Erbaum";
   src: url("fonts/Erbaum-Light.otf");
@@ -58,6 +59,7 @@ body {
   background-size: 80px 80px;
 }
 
+/* Intro section before the interaction starts */
 .intro {
   height: 100vh;
 
@@ -152,6 +154,7 @@ h1 {
   justify-content: center;
 }
 
+/* Soft glow effect behind products */
 .glow {
   position: absolute;
 
@@ -237,6 +240,7 @@ h1 {
     transform 0.8s ease;
 }
 
+/* This allows for the focus frame to fade slightly while movement happens */
 .strip.is-moving + .focus-frame {
   opacity: 0.1;
 
@@ -354,6 +358,7 @@ h1 {
   margin: 0;
 }
 
+/* Animated line movement */
 @keyframes scrollLine {
   0% {
     transform: scaleY(0.3);

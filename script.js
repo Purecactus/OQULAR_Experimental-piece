@@ -8,6 +8,8 @@ const copy = document.getElementById("copy");
 
 const counter = document.getElementById("counter");
 
+// Product positions + text content
+// x controls where each product stops
 const products = [
   {
     x: -350,
@@ -38,13 +40,16 @@ function formatCounter(index) {
   return `0${index + 1} / 03`;
 }
 
+// This handles the movement between different products
 function moveToProduct(index) {
   if (isAnimating) return;
 
   isAnimating = true;
 
+  // This line hides the text while movement is happening
   copy.classList.add("is-hidden");
 
+  // And this activates  the blur effect while movement is happening
   strip.classList.add("is-moving");
 
   setTimeout(() => {
@@ -52,6 +57,7 @@ function moveToProduct(index) {
   }, 180);
 
   setTimeout(() => {
+    // This updates text content after the movement
     title.textContent = products[index].title;
 
     text.textContent = products[index].text;
@@ -68,6 +74,7 @@ function moveToProduct(index) {
   }, 1700);
 }
 
+// This prevents scrolling from being too fast between products
 function triggerNext() {
   const now = Date.now();
 
@@ -86,6 +93,7 @@ window.addEventListener("wheel", (event) => {
   }
 });
 
+// Testing, remove before submission
 window.addEventListener("keydown", (event) => {
   if (event.key === "ArrowDown" || event.key === " ") {
     triggerNext();
